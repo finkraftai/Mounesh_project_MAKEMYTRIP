@@ -42,7 +42,7 @@ function App() {
     console.log('Data to send:', data); // Log data before sending
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/data', {
+      const response = await fetch('http://127.0.0.1:5000/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
