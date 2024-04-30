@@ -56,7 +56,7 @@ def process_hotels_data(expense_client_id, external_org_id, start_date, end_date
     for entry in csv_data:
         entry.update(additional_data)
 
-    save_to_mongodb(csv_data, "MakeMyTrip", "Mounesh")
+    save_to_mongodb(csv_data, "MakeMyTrip", "ALL_DATA_HOTELS")
 
 # Process data for other collections
 def process_other_data(expense_client_id, external_org_id, start_date, end_date, Row_Labels, Org_name, Admin_Email_1, collection_name):
@@ -125,7 +125,7 @@ def submit_data():
     start_date, end_date = generate_timestamps(start_date, end_date)
     
     try:
-        if collection_name == "Mounesh":
+        if collection_name == "ALL_DATA_HOTELS":
             process_hotels_data(expense_client_id, external_org_id, start_date, end_date, Row_Labels, Org_name, Admin_Email_1)
         else:
             process_other_data(expense_client_id, external_org_id, start_date, end_date, Row_Labels, Org_name, Admin_Email_1, collection_name)
